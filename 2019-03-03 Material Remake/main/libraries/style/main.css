@@ -1,0 +1,152 @@
+/* Page Styles */
+::selection {
+    background: transparent;
+}
+::-moz-selection {
+    background: transparent;
+}
+* {
+    margin: 0;
+    padding: 0;
+}
+html,
+body {
+    box-sizing: border-box;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+}
+app {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 200px calc(100% - 200px);
+    height: 100%;
+}
+keypad {
+    display: grid;
+    grid-template-columns: 70% calc(100% - 70% - 30px) 30px;
+    height: 100%;
+}
+basic {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    height: 100%;
+}
+operations {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+    height: 100%;
+}
+slider {
+    display: block;
+    height: 100%;
+}
+screen {
+    border-bottom: 1px solid gray;
+}
+div#menu {
+    display: table-cell;
+    text-align: left;
+}
+div#menu i {
+    background: lightgray;
+    padding: 10px;
+    cursor: pointer;
+}
+div#menu-bar i {
+    background: lightgray;
+    padding: 10px;
+    cursor: pointer;
+}
+div#history {
+    display: table-cell;
+    text-align: right;
+}
+div#history i {
+    background: lightgray;
+    padding: 10px;
+    cursor: pointer;
+}
+div#history-bar i {
+    background: lightgray;
+    padding: 10px;
+    cursor: pointer;
+}
+div#menu-bar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: lightgray;
+    width: 150px;
+    height: 100%;
+    text-align: left;
+}
+div#history-bar {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: lightgray;
+    width: 150px;
+    height: 100%;
+    text-align: right;
+}
+ul {
+    list-style-type: none;
+}
+nav {
+    display: table;
+    width: 100%;
+    border-bottom: 1px solid gray;
+}
+button.arrow {
+    height: 100%;
+    width: 100%;
+    text-align: left;
+}
+input#screen {
+    width: 95%;
+    outline: none;
+    font-size: 60pt;
+    text-align: right;
+    border: none;
+    margin-right: 10px;
+}
+input#preview {
+    width: 95%;
+    outline: none;
+    font-size: 20pt;
+    text-align: right;
+    border: none;
+    color: #6b6a6a;
+    margin-right: 10px;
+}
+div#complex {
+    display: grid;
+    grid-template-columns: 30px calc(100% - 30px);
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    height: calc(100% - 200px);
+    width: 200px;
+}
+div#complex-keypad {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+}
+button {
+    background: none;
+    outline: none;
+    border: none;
+    font-size: 20pt;
+}
+#complex button {
+    background: lightgray;
+}
+button.arrow {
+    background-color: lightcoral !important;
+}

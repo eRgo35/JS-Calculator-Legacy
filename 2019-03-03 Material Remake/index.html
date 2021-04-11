@@ -1,0 +1,108 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>JS Calculator</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script>//window.open('main/main.html', 'popup', 'noresizable,width=312,height=485');</script>
+    <link rel="shortcut icon" type="image/png" href="main/libraries/style/favicon-32x32.png" />
+    <link rel="icon" type="image/png" href="main/libraries/style/android-chrome-192x192.png" />
+    <link href="https://fonts.googleapis.com/css?family=Josefin+Sans&amp;subset=latin-ext" rel="stylesheet">
+    <style>
+        html {
+            background: #67B26F;
+            /* fallback for old browsers */
+            background: -webkit-linear-gradient(to right, #4ca2cd, #67B26F);
+            /* Chrome 10-25, Safari 5.1-6 */
+            background: linear-gradient(to right, #4ca2cd, #67B26F);
+            /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+        }
+
+        html,
+        body {
+            font-family: 'Josefin Sans', sans-serif;
+            color: white;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+            width: 100%;
+            text-align: center;
+        }
+
+        div#info {
+            position: absolute;
+            bottom: 0;
+            text-align: center;
+            font-size: 1.15em;
+        }
+
+        div#button {
+            position: relative;
+            font-size: 28pt;
+            border: 3px solid white;
+            border-radius: 20px;
+            padding: 20px;
+            cursor: pointer;
+            transition: color 1s ease-in-out;
+            transition: box-shadow 0.5s ease-in-out;
+            overflow: hidden;
+        }
+
+        div#button::before {
+            content: "";
+            width: 500px;
+            height: 500px;
+            position: absolute;
+            left: -80px;
+            top: -185px;
+            z-index: -1;
+            background: white;
+            transition: all 0.8s cubic-bezier(.73, .7, 0, .81);
+            border-radius: 90%;
+            transform: scale(0);
+        }
+
+        div#button:hover:before {
+            transform: scale(2);
+        }
+
+        div#button:hover {
+            font-weight: bold;
+            background: -webkit-linear-gradient(#4ca2cd, #67B26F);
+            -webkit-background-clip: text;
+            -webkit-box-shadow: 0px 0px 71px -12px rgba(0, 0, 0, 0.75);
+            -moz-box-shadow: 0px 0px 71px -12px rgba(0, 0, 0, 0.75);
+            box-shadow: 0px 0px 71px -12px rgba(0, 0, 0, 0.75);
+            -webkit-text-fill-color: transparent;
+            transition: color 1s ease-in-out;
+            transition: box-shadow 0.5s ease-in-out;
+        }
+
+        img {
+            vertical-align: middle;
+            width: 100px;
+            transition: transform 0.8s ease-in-out;
+        }
+
+        div#button:hover img {
+            transform: rotate(360deg);
+        }
+    </style>
+</head>
+
+<body>
+    <div id="button" onclick="window.open('main/main.html','popup','noresizable,width=312,height=485');">
+        <img src="main/libraries/style/android-chrome-192x192.png" /> <span>Calculator</span>
+    </div>
+    <div id="info">
+        Make sure to allow popup windows on this website.<br />
+        &copy; 2019 Michał Czyż All Rights Reserved
+    </div>
+</body>
+
+</html>

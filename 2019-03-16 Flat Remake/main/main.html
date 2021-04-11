@@ -1,0 +1,126 @@
+<!-- Copyright(C) Michał Czyż 2019 -->
+<!DOCTYPE html>
+<html>
+<!-- Head Data -->
+
+<head>
+
+    <!-- Meta Tags-->
+
+    <!-- Charset -->
+    <meta charset="utf-8" />
+    <!-- Edge Thing -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Smaller Screens/Mobile Compatibility -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Script Tags -->
+
+    <!-- JQuery Import-->
+    <script src="libraries/jquery-3.3.1.min.js"></script>
+    <!-- Main Javascipt File -->
+    <script src="libraries/main.js"></script>
+
+    <!-- Link Relations -->
+
+    <!-- Marerial Icon Pack-->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <!-- Main CSS Stylesheet-->
+    <link rel="stylesheet" href="libraries/style/main.css" />
+    <!-- Font -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <!-- Favicons -->
+    <link rel="shortcut icon" type="image/png" href="libraries/style/icon.png" />
+    <link rel="icon" type="image/png" href="libraries/style/icon.png" />
+
+    <!-- Title-->
+
+    <title>JS Calculator</title>
+</head>
+<!-- Proper Calculator -->
+
+<body>
+    <app>
+        <screen>
+            <div id="menu-bar">
+                <i class="material-icons" id="menu-close">menu</i>
+                <ul>
+                    <li><a href="#">Link 1</a></li>
+                    <li><a href="#">Link 2</a></li>
+                    <li><a href="#">Link 3</a></li>
+                </ul>
+            </div>
+            <div id="history-bar">
+                <i class="material-icons" id="history-close">history</i>
+                <ul>
+                    <li><a href="#">Link 1</a></li>
+                    <li><a href="#">Link 2</a></li>
+                    <li><a href="#">Link 3</a></li>
+                </ul>
+            </div>
+            <nav>
+                <div id="menu">
+                    <i class="material-icons" id="menu-open">menu</i>
+                </div>
+                <div id="history">
+                    <i class="material-icons" id="history-open">history</i>
+                </div>
+            </nav>
+            <input type="text" id="screen" maxlength="20" value="">
+            <input type="text" id="preview" maxlength="20" value="">
+        </screen>
+        <keypad>
+            <basic>
+                <button class="button numbers" onclick="Input('7');">7</button>
+                <button class="button numbers" onclick="Input('8');">8</button>
+                <button class="button numbers" onclick="Input('9');">9</button>
+                <button class="button numbers" onclick="Input('4');">4</button>
+                <button class="button numbers" onclick="Input('5');">5</button>
+                <button class="button numbers" onclick="Input('6');">6</button>
+                <button class="button numbers" onclick="Input('1');">1</button>
+                <button class="button numbers" onclick="Input('2');">2</button>
+                <button class="button numbers" onclick="Input('3');">3</button>
+                <button class="button numbers" onclick="Input('0');">0</button>
+                <button class="button basic-stuff" onclick="Input('.');">.</button>
+                <button class="button triggers" onclick="Ans();">=</button>
+            </basic>
+            <operations>
+                <button class="button triggers" id="back" onclick="Back();"><i class="material-icons">keyboard_backspace</i></button>
+                <button class="button triggers" id="clear" onclick="Clear();" style="display: none;">C</button>
+                <button class="button basic-stuff" onclick="Input('/');">/</button>
+                <button class="button basic-stuff" onclick="Input('*');">*</button>
+                <button class="button basic-stuff" onclick="Input('-');">-</button>
+                <button class="button basic-stuff" onclick="Input('+');">+</button>
+            </operations>
+            <slider>
+                <button class="arrow" id="complex-open"><i class="material-icons">chevron_left</i></button>
+            </slider>
+        </keypad>
+        <div id="complex">
+            <div id="close-arrow">
+                <button class="arrow" id="complex-close"><i class="material-icons">chevron_right</i></button>
+            </div>
+            <div id="complex-keypad">
+                <button class="button basic-stuff">±</button>
+                <button class="button complex-stuff">rad</button>
+                <button class="button complex-stuff" style="display: none">∘</button>
+                <button class="button complex-stuff">%</button>
+                <button class="button complex-stuff">sin</button>
+                <button class="button complex-stuff">cos</button>
+                <button class="button complex-stuff">tan</button>
+                <button class="button complex-stuff">ln</button>
+                <button class="button complex-stuff">log</button>            
+                <button class="button complex-stuff">√</button>
+                <button class="button complex-stuff">&#x003C0;</button>
+                <button class="button complex-stuff">e</button>
+                <button class="button complex-stuff">^</button>
+                <button class="button basic-stuff">(</button>
+                <button class="button basic-stuff">)</button>
+                <button class="button complex-stuff">!</button>
+            </div>
+        </div>
+        <div id="fader"></div>
+    </app>
+</body>
+
+</html>

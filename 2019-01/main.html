@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>JS Calculator</title>
+    <link rel="shortcut icon" type="image/png" href="favicon.png" />
+    <link href="https://fonts.googleapis.com/css?family=Rubik&amp;subset=latin-ext" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=PT+Mono" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="jquery.textfill.min.js"></script>
+    <script src="main.js"></script>
+    <style>
+        * {
+            margin: 0;
+        }
+
+        html,
+        body {
+            margin: 0;
+            height: 100%;
+            overflow: hidden;
+            font-family: Rubik;
+        }
+
+        div#wrapper {
+            width: 100%;
+            height: 100%;
+        }
+
+        div#navbar {
+            display: table;
+            width: 100%;
+        }
+
+        div#menu,
+        div#type,
+        div#history {
+            display: table-cell;
+            vertical-align: middle;
+        }
+
+        div#history {
+            text-align: right;
+        }
+
+        div#input {
+            text-align: right;
+            display: table-cell;
+            vertical-align: top;
+            height: 90px;
+        }
+
+        div#memory {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        div#keypad {
+            margin: auto;
+            height: 100%;
+            text-align: center;
+            vertical-align: middle;
+            width: 100%;
+        }
+
+        button.keypad {
+            width: 25%;
+            height: 10.5%;
+            font-family: Rubik;
+            transition-duration: 0.4s;
+            background-color: white;
+            color: black;
+            border: 2px solid #4CAF50;
+            float: left;
+            font-size: 17pt;
+            max-height: 25%;
+            
+        }
+        button.keypad:hover {
+            background-color: #4CAF50;
+            color: white;
+        }
+        input.input {
+            font-size: 38pt;
+            font-family: "PT Mono";
+            text-align: right;
+            width: 100%;
+            border: none;
+        }
+        button.memory {
+            font-family: Rubik;
+            transition-duration: 0.4s;
+            background-color: white;
+            border: none;
+            width: 20%;
+            color: black;
+            font-size: 15pt;
+        }
+        button.memory:hover {
+            background-color: #4CAF50;
+            color: white;
+        }
+        button.memory i {
+            vertical-align: top;
+        }
+        #type span {
+            font-size: 24pt
+        }
+        #menu i, #history i {
+            cursor: pointer;
+            transition-duration: 0.4s;
+            height: 100%;
+            padding: 10px;
+        }
+        #menu i:hover , #history i:hover {
+            background: #4CAF50;
+            color: white;
+        }
+        button.keypad i {
+            vertical-align: middle;
+        }
+        div#operation {
+            width: 100%;
+            height: 20px;
+            text-align: right;
+        }
+        input.mem {
+            border: none;
+            width: 100%;
+            font-size: 12pt;
+            text-align: right;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="wrapper">
+        <div id="navbar">
+            <div id="menu">
+                <i class="material-icons" onclick="CommingSoon();">menu</i>
+            </div>
+            <div id="type">
+                <span>Standard</span>
+            </div>
+            <div id="history">
+                <i class="material-icons" onclick="CommingSoon();">history</i>
+            </div>
+        </div>
+        <div id="operation">
+            <input type="text" class="mem" id="mem" value="" readonly />
+        </div>
+        <div id="input">
+            <input type="text" class="input" id="main_input" maxlength="16" value="0" readonly />
+        </div>
+        <div id="memory">
+            <button class="memory">MC</button>
+            <button class="memory">MR</button>
+            <button class="memory">M+</button>
+            <button class="memory">M-</button>
+            <button class="memory">MS</button>
+            <button class="memory">M<i class="material-icons">expand_more</i></button>
+        </div>
+        <div id="keypad">
+            <button id="proc" class="keypad">%</button>
+            <button id="root" class="keypad">√</button>
+            <button id="square" class="keypad">x²</button>
+            <button id="inverse" class="keypad">¹/ₓ</button>
+            <button id="ce" class="keypad">CE</button>
+            <button id="c" class="keypad" onclick="Clear();">C</button>
+            <button id="back" class="keypad"><i class="material-icons">keyboard_backspace</i></button>
+            <button id="divide" class="keypad">÷</button>
+            <button id="7" class="keypad" onclick="Input(7);">7</button>
+            <button id="8" class="keypad" onclick="Input(8);">8</button>
+            <button id="9" class="keypad" onclick="Input(9);">9</button>
+            <button id="multiplicate" class="keypad">×</button>
+            <button id="4" class="keypad" onclick="Input(4);">4</button>
+            <button id="5" class="keypad" onclick="Input(5);">5</button>
+            <button id="6" class="keypad" onclick="Input(6);">6</button>
+            <button id="subtraction" class="keypad">-</button>
+            <button id="1" class="keypad" onclick="Input(1);">1</button>
+            <button id="2" class="keypad" onclick="Input(2);">2</button>
+            <button id="3" class="keypad" onclick="Input(3);">3</button>
+            <button id="addition" class="keypad">+</button>
+            <button id="negate" class="keypad">±</button>
+            <button id="0" class="keypad" onclick="Input(0);">0</button>
+            <button id="dot" class="keypad" onclick="DotInput()">.</button>
+            <button id="equals" class="keypad">=</button>
+        </div>
+    </div>
+</body>
+
+</html>
